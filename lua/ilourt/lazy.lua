@@ -1,15 +1,21 @@
 require("lazy").setup({
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.5' ,
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
     dependencies = {
       "nvim-lua/plenary.nvim"
     }
   },
-  { "catppuccin/nvim", as = "catppuccin", config = function()
-    vim.cmd("colorscheme catppuccin")
-  end},
+  {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      vim.cmd("colorscheme catppuccin")
+    end
+  },
 
   "folke/which-key.nvim",
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 'mbbill/undotree' },
   { 'tpope/vim-fugitive' },
 
@@ -18,15 +24,15 @@ require("lazy").setup({
     branch = 'v3.x',
     dependencies = {
       --- Uncomment these if you want to manage LSP servers from neovim
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- LSP Support
-      {'neovim/nvim-lspconfig'},
+      { 'neovim/nvim-lspconfig' },
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'L3MON4D3/LuaSnip' },
     }
   },
 
@@ -40,7 +46,11 @@ require("lazy").setup({
     config = function()
       require("nvim-tree").setup {}
     end,
+  },
+
+  -- Display lsp errors in a bottom panel
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   }
-
 })
-
