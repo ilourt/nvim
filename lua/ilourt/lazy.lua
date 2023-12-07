@@ -10,7 +10,8 @@ require("lazy").setup({
     "catppuccin/nvim",
     as = "catppuccin",
     config = function()
-      vim.cmd("colorscheme catppuccin")
+      require("ilourt.plugins.catppuccin")()
+      -- vim.cmd("colorscheme catppuccin")
     end
   },
 
@@ -52,5 +53,20 @@ require("lazy").setup({
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "rebelot/heirline.nvim",
+    dependencies = {
+      {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+          require('gitsigns').setup()
+        end
+      }
+    },
+    config = function()
+      require("ilourt.plugins.heirline")
+    end,
   }
 })

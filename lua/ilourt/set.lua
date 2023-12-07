@@ -28,3 +28,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader  = " "
+
+-- Enable global status line
+vim.opt.laststatus = 3
