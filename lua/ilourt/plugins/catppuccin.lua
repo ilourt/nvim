@@ -1,4 +1,4 @@
-return  function()
+return function()
   -- vim.g.catppuccin_flavour = 'latte'
   vim.g.catppuccin_flavour = 'mocha'
   -- vim.g.catppuccin_flavour = 'macchiato'
@@ -84,11 +84,11 @@ return  function()
       DiagnosticFloatingHint = { fg = C.blue },
 
       -- FIX: Is there any better way to disable all italics for treesitter?
-      ['@parameter'] = { fg = C.maroon, style = {} }, -- For parameters of a function.
-      ['@namespace'] = { fg = C.lavender, style = {} }, -- For identifiers referring to modules and namespaces.
-      ['@text.emphasis'] = { fg = C.maroon, style = {} }, -- italic
+      ['@parameter'] = { fg = C.maroon, style = {} },                -- For parameters of a function.
+      ['@namespace'] = { fg = C.lavender, style = {} },              -- For identifiers referring to modules and namespaces.
+      ['@text.emphasis'] = { fg = C.maroon, style = {} },            -- italic
       ['@text.uri'] = { fg = C.rosewater, style = { 'underline' } }, -- urls, links and emails
-      ['@tag.attribute'] = { fg = C.teal, style = {} }, -- Tags like html tag names.
+      ['@tag.attribute'] = { fg = C.teal, style = {} },              -- Tags like html tag names.
 
       LspInfoBorder = { link = 'FloatBorder' },
       LspInfoTitle = { fg = C.blue },
@@ -167,4 +167,3 @@ return  function()
 
   vim.cmd([[colorscheme catppuccin]])
 end
-

@@ -17,8 +17,45 @@ require("lazy").setup({
 
   "folke/which-key.nvim",
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  },
+
   { 'mbbill/undotree' },
+
+  -- Git management
   { 'tpope/vim-fugitive' },
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  { "f-person/git-blame.nvim" },
+
+  -- Multi cursor
+  {
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      'smoka7/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    keys = {
+      {
+        mode = { 'v', 'n' },
+        '<Leader>m',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
+    },
+  },
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -68,5 +105,23 @@ require("lazy").setup({
     config = function()
       require("ilourt.plugins.heirline")
     end,
+  },
+
+  -- copilot
+  {
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
   }
 })

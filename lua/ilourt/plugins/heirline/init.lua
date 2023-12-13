@@ -419,12 +419,7 @@ local Git = {
     end,
     on_click = {
       callback = function()
-        -- vim.defer_fn(function()
-        --   require('telescope.builtin').git_branches()
-        -- end, 50)
-        vim.schedule(function()
-          require('telescope.builtin').git_branches()
-        end)
+          vim.cmd.LazyGit()
       end,
       name = 'heirline_gitbranch',
     },

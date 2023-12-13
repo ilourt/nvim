@@ -41,10 +41,10 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- scroll up and down the documentation window
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-y>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-d>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-f>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
   }),
 })
