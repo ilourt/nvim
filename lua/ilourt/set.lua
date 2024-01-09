@@ -28,8 +28,9 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- Fold
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "expr" -- Treesitter folding
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- Treesitter folding
+vim.opt.foldenable = false -- Disable folding by default
 
 vim.g.mapleader  = " "
 
