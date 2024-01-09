@@ -4,7 +4,10 @@ require("lazy").setup({
     tag = '0.1.5',
     dependencies = {
       "nvim-lua/plenary.nvim"
-    }
+    },
+    config = function()
+      require("ilourt.plugins.telescope")
+    end,
   },
   {
     "catppuccin/nvim",
@@ -72,6 +75,17 @@ require("lazy").setup({
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'L3MON4D3/LuaSnip' },
     }
+  },
+
+  -- Manage outline
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
   },
 
   {
