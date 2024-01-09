@@ -20,6 +20,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
+-- save shortcut
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
@@ -39,6 +42,9 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/ilourt/lazy.lua<CR
 
 -- Toggle the trouble panel
 vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle<CR>");
+
+-- Buffer
+vim.keymap.set("n", "<leader>bd", ":bd");
 
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
